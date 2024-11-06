@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\StudenController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -11,4 +12,8 @@ route::get('/student', [StudenController::class, 'index']);
 route::post('/student', [StudenController::class, 'store']);
 Route::put('/student/{id}', [StudenController::class, 'update']);
 Route::delete('/student/{id}', [StudenController::class, 'destroy']);
+Route::get('/student/{id}',[StudenController::class, 'show']);
+
+
+Route::post('/register',[AuthController::class, 'register']);
 
